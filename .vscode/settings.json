@@ -1,4 +1,4 @@
 {
-  "python.envFile": "${workspaceFolder}/.env",
-  "python.analysis.extraPaths": ["${workspaceFolder}/src"]
+  "python.analysis.extraPaths": ["./src"],
+  "python.envFile": "${workspaceFolder}/.env"
 }
