@@ -1,4 +1,4 @@
-from functions.randomMatrix import random_matrix as matrix
+from src.randomMatrix import random_matrix as matrix
 
 
 def main() -> None:
