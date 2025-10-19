@@ -1,5 +1,5 @@
 import copy
-from exo1.dominance_algorithm import remove_dominated_strategies
+from utils.exo1.dominance_algorithm import remove_dominated_strategies
 from config.exo1_config import GAME 
 
 def main() -> None:
