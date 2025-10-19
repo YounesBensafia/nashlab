@@ -1,3 +1,5 @@
+import numpy as np
+
 def check_dominance(matrix):
     n_rows = len(matrix)
     n_cols = len(matrix[0])
@@ -43,14 +45,42 @@ def check_dominance(matrix):
 
     return dominated_A, dominated_B
 
-
-game = [
-    [(3,1), (2,2), (1,0)],
-    [(1,1), (3,0), (2,3)],
-    [(0,4), (1,2), (1,1)]
-]
-
-A_dom, B_dom = check_dominance(game)
-
-print("Player A dominated strategies (row_j is dominated by row_i):", A_dom)
-print("Player B dominated strategies (col_j is dominated by col_i):", B_dom)
+def remove_dominated_strategies(matrix):
+    is_numpy = isinstance(matrix, np.ndarray)
+    if is_numpy:
+        matrix = matrix.tolist()
+    
+    removed_rows = []
+    removed_cols = []
+    
+    while True:
+        A_dom, B_dom = check_dominance(matrix)
+        
+        if not A_dom and not B_dom:
+            break
+        
+        rows_to_remove = set()
+        cols_to_remove = set()
+        
+        for dominated, dominating in A_dom:
+            rows_to_remove.add(dominated)
+        
+        for dominated, dominating in B_dom:
+            cols_to_remove.add(dominated)
+        
+        for row_idx in sorted(rows_to_remove, reverse=True):
+            removed_rows.append(row_idx)
+            matrix.pop(row_idx)
+        
+        for col_idx in sorted(cols_to_remove, reverse=True):
+            removed_cols.append(col_idx)
+            for row in matrix:
+                row.pop(col_idx)
+        
+        if not matrix or not matrix[0]:
+            break
+    
+    if is_numpy:
+        matrix = np.array(matrix)
+    
+    return matrix, removed_rows, removed_cols
