@@ -4,7 +4,7 @@ from rich import box
 
 import copy
 from utils.exo1.dominance_algorithm import remove_dominated_strategies
-from config.exo1_config import GAME
+from config.settings import GAME
 
 
 def matrix_to_table(matrix):

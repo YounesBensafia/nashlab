@@ -62,7 +62,7 @@ def remove_dominated_strategies(matrix):
         rows_to_remove = set()
         cols_to_remove = set()
         
-        for dominated, dominating in A_dom:
+        for dominated, _ in A_dom:
             rows_to_remove.add(dominated)
         
         for dominated, dominating in B_dom:
