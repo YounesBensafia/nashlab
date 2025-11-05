@@ -15,6 +15,7 @@ choice_style = Style([
 choice_question =   [
             "Exercise 1: Remove strictly dominated strategies",
             "Exercise 2: Find dominant strategies",
-            "Exercise 3: Find pure Nash equilibria"
+            "Exercise 3: Find pure Nash equilibria",
+            "Exercise 4: Find Pareto optimal profiles",
         ]
 

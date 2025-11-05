@@ -1,9 +1,4 @@
 def find_nash_from_pair_matrix(payoff_matrix):
-    """
-    payoff_matrix: list[list[ (a_payoff, b_payoff) ]]
-    returns: list of ((i,j), (a_payoff, b_payoff)) for each pure NE
-    """
-    # convert to list of lists (defensive)
     PM = [list(row) for row in payoff_matrix]
     n = len(PM)
     if n == 0:

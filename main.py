@@ -1,5 +1,7 @@
 from src.exercises.exo1.main import main as exo1
 from src.exercises.exo2.main import main as exo2
+from src.exercises.exo3.main import main as exo3
+from src.exercises.exo4.main import main as exo4
 import questionary
 from rich.console import Console
 from config.settings import choice_style
@@ -24,6 +26,10 @@ def main() -> None:
         exo1()
     elif choice == choice_question[1]:
         exo2()
+    elif choice == choice_question[2]:
+        exo3()
+    elif choice == choice_question[3]:
+        exo4()
 
     console.print("Execution finished.", style="bold green")
 
