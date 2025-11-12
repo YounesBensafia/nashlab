@@ -26,7 +26,7 @@ def find_nash_from_pair_matrix(payoff_matrix):
                     break
 
             if best_A and best_B:
-                equilibria.append((a_payoff, b_payoff))
+                equilibria.append((i, j, a_payoff, b_payoff))
 
     return equilibria
 
